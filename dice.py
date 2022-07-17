@@ -2,6 +2,28 @@
 cycles = int(0)
 rolls = []
 max = 21
+numOfRolls = int
+num = int
+count = int
+sum = int
+average = int
+
+#check if the die is near the range of fair
+def isItFair(x):
+    if x < 11 and x > 9:
+        return("Fair")
+    else:
+        return("Unfair")
+
+#print out the list of rolls, an ordered list of rolls, and the average, 
+def maths():
+    print(rolls)
+    rolls.sort()
+    print(rolls)
+    count = len(rolls)
+    sum = sum(rolls)
+    average = sum/count
+    print(average)
 
 print("Input a roll by typing a number and pressing enter")
 numOfRolls = input("How many rolls? ")
@@ -16,20 +38,6 @@ while int(cycles) < int(numOfRolls):
     else:
         print("Not a valid number")
 
-#print out the list of rolls, an ordered list of rolls, and the average, 
-print(rolls)
-rolls.sort()
-print(rolls)
-count = len(rolls)
-sum = sum(rolls)
-average = sum/count
-print(average)
+maths()
 
-#check if the die is near the range of fair
-def isItFair():
-    if average < 11 and average > 9:
-        return("Fair")
-    else:
-        return("Unfair")
-
-print(isItFair())
+print(isItFair(average))
