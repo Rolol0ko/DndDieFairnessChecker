@@ -5,8 +5,8 @@ max = 21
 numOfRolls = int
 num = int
 count = int
-sum = int
-average = int
+sumOfRolls = int
+average = 10
 
 #check if the die is near the range of fair
 def isItFair(x):
