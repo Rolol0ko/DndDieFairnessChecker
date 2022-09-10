@@ -15,16 +15,6 @@ def isItFair(x):
     else:
         return("Unfair")
 
-#print out the list of rolls, an ordered list of rolls, and the average, 
-def maths():
-    print(rolls)
-    rolls.sort()
-    print(rolls)
-    count = len(rolls)
-    sum = sum(rolls)
-    average = sum/count
-    print(average)
-
 print("Input a roll by typing a number and pressing enter")
 numOfRolls = input("How many rolls? ")
 
@@ -37,7 +27,14 @@ while int(cycles) < int(numOfRolls):
         cycles += 1
     else:
         print("Not a valid number")
-
-maths()
+        
+#print out the list of rolls, an ordered list of rolls, and the average, 
+print(rolls)
+rolls.sort()
+print(rolls)
+count = len(rolls)
+sumOfRolls = sum(list(rolls))
+average = sumOfRolls/count
+print(average)
 
 print(isItFair(average))
