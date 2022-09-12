@@ -1,6 +1,5 @@
 
 #define variables
-cycles = int(0)
 rolls = []
 max = 21
 numOfRolls = int
@@ -16,8 +15,8 @@ def isItFair(x):
     else:
         return("Unfair")
     
-def rolls():
-    #take numOfRolls inputs
+def roll(numOfRolls, max):
+    cycles = int(0)
     while int(cycles) < int(numOfRolls):
         num = int(input('-'))
 
@@ -25,7 +24,7 @@ def rolls():
             rolls.append(num)
             cycles += 1
         else:
-            print("Not a valid number")
+            return("Not a valid number")
 
 def maths():
     #print out the list of rolls, an ordered list of rolls, and the average,
@@ -47,10 +46,6 @@ print("")
 print("")
 print("")
 
-print("Input a roll by typing a number and pressing enter")
-numOfRolls = input("How many rolls? ")
-max = (int(input("How many sides on the die?"))+1)
-
-rolls()
+print(roll(input("How many rolls? "), (int(input("How many sides on the die? "))+1)))
 maths()
 print(isItFair(average))
