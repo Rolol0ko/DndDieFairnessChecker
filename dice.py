@@ -1,23 +1,17 @@
-from tkinter import *
-import tkinter
-
 #define variables
 rolls = []
-max = 21
 numOfRolls = int
 num = int
 count = int
 sumOfRolls = int
 average = 10
 
-#create tkinter window
-root = Tk()
-root.title("DieFairnessChecker")
-root.mainloop()
+def testfunc():
+    return("Test")
 
-def isItFair(x):
+def isItFair(x, max):
     #check if the die is near the range of fair
-    if x < max/2+0.6 and x > max/2-0.6:
+    if x < int(max)/2+0.6 and x > int(max)/2-0.6:
         return("Fair")
     else:
         return("Unfair")
@@ -35,24 +29,14 @@ def roll(numOfRolls, max):
 
 def maths():
     #print out the list of rolls, an ordered list of rolls, and the average,
-    print("") 
-    print(rolls)
     rolls.sort()
-    print(rolls)
     count = len(rolls)
     sumOfRolls = sum(list(rolls))
     average = sumOfRolls/count
-    print("")
-    print(average)
-    print("")
+    return(average)
 
-print("")
-print("")
-print("")
-print("")
-print("")
-print("")
+#max = input("How many sides on the die? ")
 
-print(roll(input("How many rolls? "), (int(input("How many sides on the die? "))+1)))
-maths()
-print(isItFair(average))
+#print(roll(input("How many rolls? "), (int(max))))
+#maths()
+#print(isItFair(average, max))
