@@ -1,3 +1,5 @@
+from tkinter import *
+import tkinter
 
 #define variables
 rolls = []
@@ -7,6 +9,11 @@ num = int
 count = int
 sumOfRolls = int
 average = 10
+
+#create tkinter window
+root = Tk()
+root.title("DieFairnessChecker")
+root.mainloop()
 
 def isItFair(x):
     #check if the die is near the range of fair
