@@ -32,7 +32,5 @@ def maths(list):
     return(average)
 
 #max = input("How many sides on the die? ")
-
 #print(roll(input("How many rolls? "), (int(max))))
-#maths(rolls)
-#print(isItFair(average, max))
+#print(isItFair(maths(rolls), max))
