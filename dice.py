@@ -24,10 +24,9 @@ def roll(numOfRolls, max):
         else:
             return("Not a valid number")
 
-def maths(list):
-    #print out the list of rolls, an ordered list of rolls, and the average,
-    count = len(list)
-    sumOfRolls = sum(list(list))
+def maths(x):
+    count = len(x)
+    sumOfRolls = sum(list(x))
     average = sumOfRolls/count
     return(average)
 
