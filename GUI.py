@@ -1,7 +1,7 @@
+from tkinter import messagebox
 from tkinter import ttk
 from tkinter import *
 import tkinter
-from tkinter import messagebox
 import dice
 
 listOfRolls = []
@@ -27,6 +27,7 @@ def addRoll():
     global listOfRolls
     global Input3
     
+    #check if it's a valid roll
     if int(Input3.get()) < int(int(Input1.get()) + 1):
         int1 = Input3.get()
         listOfRolls.append(int(int1))
@@ -37,7 +38,6 @@ def addRoll():
     
         label8.config(text=f"It is {dice.isItFair(string2, Input2.get())}")
     else:
-        print("Dummy, that's not a roll")
         messagebox.showerror(title="STUPID", message="That's not a valid number")
 
 #create tkinter window
@@ -46,30 +46,42 @@ root.geometry("300x360")
 root.title("Die Fairness Checker")
 
 #info on the rolls
-label1 = tkinter.Label(root, text = "Number of Rolls").pack()
-Input1 = ttk.Entry(root).pack()
+label1 = tkinter.Label(root, text = "Number of Rolls")
+label1.pack()
+Input1 = ttk.Entry(root)
+Input1.pack()
 
 #info on the die
-label2 = tkinter.Label(root, text = "How many Sides").pack()
-Input2 = ttk.Entry(root).pack()
+label2 = tkinter.Label(root, text = "How many Sides")
+label2.pack()
+Input2 = ttk.Entry(root)
+Input2.pack()
 
 #sumbit button
-diceButton = ttk.Button(root, text="Submit", width=20, command=getInput).pack(pady=30)
+diceButton = ttk.Button(root, text="Submit", width=20, command=getInput)
+diceButton.pack(pady=30)
 
 #confirmation labels (has the # of rolls and the # of sides in a label)
-label3 = tkinter.Label(root).pack()
-label4 = tkinter.Label(root).pack()
+label3 = tkinter.Label(root)
+label3.pack()
+label4 = tkinter.Label(root)
+label4.pack()
 
 #roll input
-label5 = tkinter.Label(root, text="Roll:").pack()
-Input3 = ttk.Entry(root).pack()
+label5 = tkinter.Label(root, text="Roll:")
+label5.pack()
+Input3 = ttk.Entry(root)
+Input3.pack()
 ttk.Button(root, text="Sumbit Rolls", width=20, command=addRoll).pack(pady=10)
 
-label6 = tkinter.Label(root, text=f"Rolls:{listOfRolls}").pack()
+label6 = tkinter.Label(root, text=f"Rolls:{listOfRolls}")
+label6.pack()
 
-label7 = tkinter.Label(root, text=f"Average will show up here").pack()
+label7 = tkinter.Label(root, text=f"Average will show up here")
+label7.pack()
 
-label8 = tkinter.Label(root).pack()
+label8 = tkinter.Label(root)
+label8.pack()
 
 #run the window
 root.mainloop()
